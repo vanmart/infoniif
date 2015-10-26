@@ -1,12 +1,14 @@
 RailsAdmin.config do |config|
 
-  ### Popular gems integration
+  config.main_app_name = Proc.new { |controller| [ "InfoNiif", "BackOffice" ] }
 
+  ### Popular gems integration
   ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
+  config.authenticate_with do
+    warden.authenticate! scope: :admins
+  end
+
+  config.current_user_method &:current_admin
 
   ## == Cancan ==
   # config.authorize_with :cancan
@@ -31,4 +33,6 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.included_models = %w[User Admin]
 end
