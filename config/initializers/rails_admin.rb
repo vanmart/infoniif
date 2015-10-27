@@ -5,13 +5,15 @@ RailsAdmin.config do |config|
   ### Popular gems integration
   ## == Devise ==
   config.authenticate_with do
-    warden.authenticate! scope: :admins
+    warden.authenticate! scope: :user
   end
 
-  config.current_user_method &:current_admin
+  
 
   ## == Cancan ==
   # config.authorize_with :cancan
+  #config.current_user_method &:current_admin
+  #config.current_user_method &:current_user
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
@@ -34,5 +36,5 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.included_models = %w[User Admin]
+  config.included_models = ['User' , 'Role', 'Company' , 'CompanyAsset' , 'AssetType' ]
 end

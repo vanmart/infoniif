@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  shortname: MyString
+  social_object: 
+  nit: MyString
+  adderss: MyString
+  phone: MyString
+  email: MyString
+  started_at: 2015-10-26
+  accounting_software: MyString
+  company_type: MyString
+  partnerns_count: 1
+  authorized_capital: 1.5
+  subscribed_capital: 1.5
+  paid_capital: 1.5
+  average_monthly_income: 1.5
+
+two:
+  name: MyString
+  shortname: MyString
+  social_object: 
+  nit: MyString
+  adderss: MyString
+  phone: MyString
+  email: MyString
+  started_at: 2015-10-26
+  accounting_software: MyString
+  company_type: MyString
+  partnerns_count: 1
+  authorized_capital: 1.5
+  subscribed_capital: 1.5
+  paid_capital: 1.5
+  average_monthly_income: 1.5

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  control: 1
+  code: MyString
+  description: MyString
+  asset_registration: MyString
+  engine_serial: MyString
+  cadastral_record: MyString
+  location: MyString
+  acquisition_date: 2015-10-26
+  acquisition_cost: 1.5
+
+two:
+  control: 1
+  code: MyString
+  description: MyString
+  asset_registration: MyString
+  engine_serial: MyString
+  cadastral_record: MyString
+  location: MyString
+  acquisition_date: 2015-10-26
+  acquisition_cost: 1.5
