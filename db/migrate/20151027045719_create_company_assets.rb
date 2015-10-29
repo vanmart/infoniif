@@ -1,36 +1,36 @@
 class CreateCompanyAssets < ActiveRecord::Migration
   def change
     create_table :company_assets do |t|
-      t.belongs_to :company, index: true
+
       t.integer :control
       t.string :code
-      t.string :description
-      t.string :asset_registration
-      t.string :engine_serial
-      t.string :cadastral_record
-      t.string :location
-      t.date :acquisition_date
+      t.integer :quantity
+      t.text :description
+      t.date :acquired_at
       t.float :acquisition_cost
-      t.integer :fiscal_lifespan
+      t.string :location
       t.integer :estimated_lifespan
-      t.integer :depreciation_years
-      t.integer :depreciation_months
-      t.float :accumulated_depreciation
-      t.float :recidual_value
-      t.integer :improvements
-      t.float :amount_on_COLPCGA_book
-      t.string :valuations
-      t.float :fair_value
-      t.boolean :diferred_taxes
-      t.float :length
-      t.date :court_date_balance
+      t.text :improvements
+      t.float :valuations
+      t.float :residual_value
 
+      #
+      t.string :real_estate_registration
+      t.string :cadastral_record
+      t.float :meters_length
 
+      #
+      t.string :engine_serial
 
-
-
+      # model associations
+      t.integer :company_asset_type_id, null: :false
+      t.integer :company_id, null: :false
 
       t.timestamps null: false
     end
+
+    add_foreign_key :company_assets, :company_asset_types
+    add_foreign_key :company_assets, :companies
+
   end
 end

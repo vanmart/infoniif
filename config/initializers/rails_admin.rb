@@ -8,8 +8,6 @@ RailsAdmin.config do |config|
     warden.authenticate! scope: :user
   end
 
-  
-
   ## == Cancan ==
   # config.authorize_with :cancan
   #config.current_user_method &:current_admin
@@ -36,5 +34,34 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.included_models = ['User' , 'Role', 'Company' , 'CompanyAsset' , 'AssetType' ]
+  config.included_models = ['User' , 'Role', 'Company' , 'CompanyAsset' , 'CompanyNature', 'CompanyAssetType', 'AccountingSoftware' ]
+
+  config.model AccountingSoftware do
+    label "Software Contable"
+    label_plural "Software Contable"
+
+    configure :companies do
+      visible false
+    end
+  end
+
+
+  config.model Company do
+    label "Compañia"
+    label_plural "Compañias"
+
+    create do
+      configure :company_assets do
+        visible false
+      end
+    end
+
+    edit do
+      configure :company_assets do
+        visible false
+      end
+    end
+
+  end
+
 end
