@@ -31,4 +31,26 @@ class User < ActiveRecord::Base
 
   belongs_to :role
 
+  validates :email, presence: true,
+
+                    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+  validates :password, presence: true
+  validates :name, presence: true
+  validates :last_name, presence: true
+  validates :identification_number, presence: true, length: { minimum: 8 }
+  validates :role_id, presence: true
+  validates :cellphone, presence: true, length: { minimum: 7 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 end

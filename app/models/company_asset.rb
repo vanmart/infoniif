@@ -10,7 +10,7 @@
 #  acquired_at              :date
 #  acquisition_cost         :float
 #  location                 :string
-#  estimated_lifespan       :integer
+#  estimated_lifespan_years :integer
 #  improvements             :text
 #  valuations               :float
 #  residual_value           :float
@@ -28,5 +28,20 @@ class CompanyAsset < ActiveRecord::Base
 
   belongs_to :company
   belongs_to :company_asset_type
+
+  validates :control, presence: true
+  validates :code, presence: true
+  validates :quantity, presence: true
+  validates :description, presence: true
+  validates :acquired_at, presence: true
+  validates :acquisition_cost, presence: true
+  validates :location, presence: true, length: { minimum: 8 }
+  validates :improvements, presence: true
+  validates :acquired_at, presence: true
+  validates :residual_value, presence: true
+  validates :real_estate_registration, presence: true
+  validates :cadastral_record, presence: true
+  validates :company_asset_type_id, presence: true
+  validates :company_id, presence: true
 
 end

@@ -1,26 +1,26 @@
-class CreateCompanyAssets < ActiveRecord::Migration
+  class CreateCompanyAssets < ActiveRecord::Migration
   def change
     create_table :company_assets do |t|
 
-      t.integer :control
-      t.string :code
-      t.integer :quantity
-      t.text :description
-      t.date :acquired_at
-      t.float :acquisition_cost
-      t.string :location
-      t.integer :estimated_lifespan
-      t.text :improvements
-      t.float :valuations
-      t.float :residual_value
+      t.integer :control,                  null: false, unique: true
+      t.string :code,                      null: false, unique: true
+      t.integer :quantity,                 null: false
+      t.text :description,                 null: false
+      t.date :acquired_at,                 null: false
+      t.float :acquisition_cost,           null: false
+      t.string :location,                  null: false
+      t.integer :estimated_lifespan_years, null: false
+      t.text :improvements,                null: false
+      t.float :valuations,                 null: false
+      t.float :residual_value,             null: false
 
       #
-      t.string :real_estate_registration
-      t.string :cadastral_record
+      t.string :real_estate_registration,  null: false
+      t.string :cadastral_record,          null: false
       t.float :meters_length
 
       #
-      t.string :engine_serial
+      t.string :engine_serial,             unique: true
 
       # model associations
       t.integer :company_asset_type_id, null: :false

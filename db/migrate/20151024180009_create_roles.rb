@@ -2,11 +2,13 @@ class CreateRoles < ActiveRecord::Migration
   def change
     create_table :roles do |t|
 
-      t.belongs_to :user, index: true	
-      t.string :name
-      t.string :description
+      t.string :name,          null: false, unique: true
+      t.string :description,   null: false
+
 
       t.timestamps null: false
     end
+
+
   end
 end

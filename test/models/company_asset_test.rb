@@ -10,7 +10,7 @@
 #  acquired_at              :date
 #  acquisition_cost         :float
 #  location                 :string
-#  estimated_lifespan       :integer
+#  estimated_lifespan_years :integer
 #  improvements             :text
 #  valuations               :float
 #  residual_value           :float

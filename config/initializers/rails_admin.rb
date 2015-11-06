@@ -34,7 +34,7 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.included_models = ['User' , 'Role', 'Company' , 'CompanyAsset' , 'CompanyNature', 'CompanyAssetType', 'AccountingSoftware' ]
+  config.included_models = ['User' , 'Role','CompanyType', 'Company' , 'CompanyAsset' , 'CompanyNature', 'CompanyAssetType', 'AccountingSoftware' ]
 
   config.model AccountingSoftware do
     label "Software Contable"
@@ -60,6 +60,209 @@ RailsAdmin.config do |config|
       configure :company_assets do
         visible false
       end
+    end
+  end
+
+  config.model CompanyAssetType do
+    label "Tipo de activo"
+    label_plural "Tipos de activos"
+
+    configure :company_assets do
+      visible false
+    end
+  end
+
+  config.model CompanyAsset do
+    label "Activo"
+    label_plural "Activos"
+
+    configure :company do
+      visible false
+    end
+  end
+
+  config.model Role do
+    label "Rol"
+    label_plural "Roles"
+
+    create do
+      configure :users do
+        visible false
+      end
+    end
+
+    edit do
+      configure :users do
+        visible false
+      end
+    end
+
+    list do
+      configure :users do
+        visible false
+      end
+    end
+  end
+
+  config.model User do
+    label "Usuario"
+    label_plural "Usuarios"
+
+    create do
+
+      configure :reset_password_sent_at do
+      visible false
+      end
+
+      configure :sign_in_count do
+        visible false
+      end
+
+      configure :remember_created_at do
+        visible false
+      end
+
+      configure :current_sign_in_at do
+        visible false
+      end
+
+      configure :last_sign_in_at do
+        visible false
+      end
+
+      configure :current_sign_in_ip do
+        visible false
+      end
+
+      configure :last_sign_in_ip do
+        visible false
+      end
+
+    end
+
+    list do
+
+      configure :reset_password_sent_at do
+      visible false
+      end
+
+      configure :sign_in_count do
+        visible false
+      end
+
+      configure :remember_created_at do
+        visible false
+      end
+
+      configure :current_sign_in_at do
+        visible false
+      end
+
+      configure :last_sign_in_at do
+        visible false
+      end
+
+      configure :current_sign_in_ip do
+        visible false
+      end
+
+      configure :last_sign_in_ip do
+        visible false
+      end
+
+      configure :created_at do
+        visible false
+      end
+
+      configure :updated_at do
+        visible false
+      end
+
+    end
+
+    show do
+
+      configure :reset_password_sent_at do
+      visible true
+      end
+
+      configure :name do
+        visible true
+      end
+
+      configure :sign_in_count do
+        visible true
+      end
+
+      configure :remember_created_at do
+        visible true
+      end
+
+      configure :current_sign_in_at do
+        visible true
+      end
+
+      configure :last_sign_in_at do
+        visible true
+      end
+
+      configure :current_sign_in_ip do
+        visible true
+      end
+
+      configure :last_sign_in_ip do
+        visible false
+      end
+
+      configure :created_at do
+        visible false
+      end
+
+      configure :updated_at do
+        visible false
+      end
+
+    end
+
+
+    edit do
+
+      configure :reset_password_sent_at do
+      visible false
+      end
+
+      configure :sign_in_count do
+        visible false
+      end
+
+      configure :remember_created_at do
+        visible false
+      end
+
+      configure :current_sign_in_at do
+        visible false
+      end
+
+      configure :last_sign_in_at do
+        visible false
+      end
+
+      configure :current_sign_in_ip do
+        visible false
+      end
+
+      configure :last_sign_in_ip do
+        visible false
+      end
+
+      configure :created_at do
+        visible false
+      end
+
+      configure :updated_at do
+        visible false
+      end
+
     end
 
   end

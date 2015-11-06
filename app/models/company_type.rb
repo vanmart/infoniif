@@ -13,4 +13,7 @@ class CompanyType < ActiveRecord::Base
 
   has_many :companies
 
+  validates :name, presence: true
+  validates :short_name, presence: true
+
 end
